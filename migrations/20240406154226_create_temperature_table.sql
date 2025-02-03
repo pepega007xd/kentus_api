@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS temperature (
+    record_timestamp DATETIME PRIMARY KEY NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    temperature REAL NOT NULL,
+    humidity REAL NOT NULL
+);

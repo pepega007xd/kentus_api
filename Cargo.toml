@@ -6,9 +6,16 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+anyhow = "1.0.81"
 chrono = { version = "0.4.31", features = ["serde"] }
-ringbuffer = "0.15.0"
+dotenvy = "0.15.7"
+dotenvy_macro = "0.15.7"
 rocket = "0.5.0-rc.3"
 serde = "1.0.190"
 serde_json = "1.0.107"
 serialport = "4.2.2"
+sqlx = { version = "0.7", features = [ "runtime-tokio", "sqlite", "chrono" ] }
+
+# always build sqlx macros in release
+[profile.dev.package.sqlx-macros]
+opt-level = 3
