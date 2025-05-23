@@ -141,7 +141,7 @@ async fn main() -> anyhow::Result<()> {
     tokio::spawn(write_data_to_db(&DATABASE_POOL));
 
     let config = rocket::Config::figment()
-        .merge(("port", 9000))
+        .merge(("port", 8002))
         .merge(("address", "127.0.0.1"));
 
     let server_result = rocket::custom(config)
